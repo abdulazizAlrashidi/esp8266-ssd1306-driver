@@ -404,4 +404,19 @@ void ssd1306_overwrite_string_char_by_char(uint8_t x, uint8_t y, const char* old
  */
 void ssd1306_overwrite_string_wrapped_char_by_char(uint8_t x, uint8_t y, const char* old_str, const char* new_str, uint8_t size_x, uint8_t size_y, uint32_t tick_delay_ms);
 
+
+/**
+ * @brief Overwrites a centered string character-by-character
+ * 
+ * @note No need to call ssd1306_display afterward.
+ * 
+ * @param y Starting Y-coordinate.
+ * @param old_str Old string to be erased
+ * @param new_str New string to be drawn.
+ * @param size_x Horizontal scale factor.
+ * @param size_y Vertical scale factor.
+ * @param tick_delay_ms Delay between each character in milliseconds.
+ */
+void ssd1306_overwrite_string_centered_char_by_char(uint8_t y, const char* old_str, const char* new_str, uint8_t size_x, uint8_t size_y, uint32_t tick_delay_ms);
+
 #endif // SSD1306_H

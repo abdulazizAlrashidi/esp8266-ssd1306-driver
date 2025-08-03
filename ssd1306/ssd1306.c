@@ -543,3 +543,9 @@ void ssd1306_overwrite_string_wrapped_char_by_char(uint8_t x, uint8_t y, const c
         vTaskDelay(tick_delay_ms / portTICK_PERIOD_MS);
     }
 }
+
+void ssd1306_overwrite_string_centered_char_by_char(uint8_t y, const char* old_str, const char* new_str, uint8_t size_x, uint8_t size_y, uint32_t tick_delay_ms)
+{
+    ssd1306_draw_string_centered(y, old_str, size_x, size_y, COLOR_BLACK);
+    ssd1306_draw_string_centered_char_by_char(y, new_str, size_x, size_y, tick_delay_ms, COLOR_WHITE);
+}
